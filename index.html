@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unisight | Adarsh</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="block-container">
+      <div class="block main-divs">
+        <div class="heading">Total Revenue</div>
+        <div class="chart-latout">
+          <div class="doughnut-chart-container">
+            <div class="myChart-cont"><canvas id="myChart"></canvas></div>
+            <div class="chart-mid-title">
+              $59,456
+            </div>
+          </div>
+          <div>
+            <div class="label">
+              <div class="label-tag"></div>
+              <div>
+                <div class="label-heading">Applicant Subscriptions</div>
+                <div class="label-price">$ 46,256</div>
+              </div>
+            </div>
+            <div class="label">
+              <div class="label-tag2"></div>
+              <div>
+                <div class="label-heading">Recruiter Subscriptions</div>
+                <div class="label-price">$ 13,200</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="block main-divs">
+        <div class="heading">Leaderboard</div>
+        <div class="leaderboard">
+          <div class="name-cont">
+            <div class="rank">1</div>
+            <img src="http://placedog.net/50/50" alt="" class="profile-pic">
+            <div class="name">Ananya Gupta</div>
+          </div>
+          <div class="performence-cont">
+            <div class="money">$59,456</div>
+            <img src="./assets/green.png" alt="">
+          </div>
+        </div>
+        <div class="leaderboard">
+          <div class="name-cont">
+            <div class="rank">1</div>
+            <img src="http://placedog.net/50/50" alt="" class="profile-pic">
+            <div class="name">Ananya Gupta</div>
+          </div>
+          <div class="performence-cont">
+            <div class="money">$59,456</div>
+            <img src="./assets/red.png" alt="">
+          </div>
+        </div>
+        <div class="leaderboard">
+          <div class="name-cont">
+            <div class="rank">1</div>
+            <img src="http://placedog.net/50/50" alt="" class="profile-pic">
+            <div class="name">Ananya Gupta</div>
+          </div>
+          <div class="performence-cont">
+            <div class="money">$59,456</div>
+            <img src="./assets/green.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="main-divs lineChartParent">
+      <div class="heading">Subscriptions</div>
+      <div class="lineChart-cont"><canvas id="lineChart"></canvas></div>
+    </div>
+  
+    <div class="block-container">
+      <div class="block main-divs">
+        <div class="heading">Applicants Registered</div>
+        <div class="fill-cart-data"><span class="bar-number">594</span> <span class="total">Total</span></div>
+        <div class="fill-chart-container">
+          <div class="fill-chart"></div>
+        </div>
+        <div class="labels-cont">
+          <div class="label">
+            <div class="label-tag"></div>
+            <div>
+              <div class="total">Pai</div>
+              <div class="label-price">179 users</div>
+            </div>
+          </div>
+          <div class="label">
+            <div class="label-tag2"></div>
+            <div>
+              <div class="total">Unpai</div>
+              <div class="label-price">394 users</div>
+            </div>
+          </div>
+        </div>
+        <div class="sec-heading">Income Generated</div>
+        <div class="heading">$ 100,000</div>
+        <div class="final-chart-cont">
+          <canvas id="lineChart2"></canvas>
+        </div>
+      </div>
+      <div class="block main-divs">
+        <div class="heading">Applicants Registered</div>
+        <div class="fill-cart-data"><span class="bar-number">594</span> <span class="total">Total</span></div>
+        <div class="fill-chart-container">
+          <div class="fill-chart"></div>
+        </div>
+        <div class="labels-cont">
+          <div class="label">
+            <div class="label-tag"></div>
+            <div>
+              <div class="total">Pai</div>
+              <div class="label-price">179 users</div>
+            </div>
+          </div>
+          <div class="label">
+            <div class="label-tag2"></div>
+            <div>
+              <div class="total">Unpai</div>
+              <div class="label-price">394 users</div>
+            </div>
+          </div>
+        </div>
+        <div class="sec-heading">Income Generated</div>
+        <div class="heading">$ 100,000</div>
+        <div class="final-chart-cont">
+          <canvas id="lineChart3"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    var ctx = document.getElementById( 'myChart' ).getContext( '2d' );
+    var myChart = new Chart( ctx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+          label: '# of Votes',
+          data: [70, 30],
+          backgroundColor: [
+            '#1A75E8',
+            'rgba(26, 117, 232, 0.5)'
+          ],
+          borderWidth: 15,
+          cutout: '68%',
+          borderRadius: '30',
+        }]
+      },
+      options: {
+        plugins: {
+          display: false
+        },
+      }
+    } );
+  </script>
+  <script>
+    var ctx2 = document.getElementById( 'lineChart' ).getContext( '2d' );
+    var myChart2 = new Chart( ctx2, {
+        type: 'line',
+        data: {
+        labels: ['a', 'b','c','d','e','f','g'],
+        datasets: [{
+          label: 'Target',
+          data: [65, 59, 40, 51, 56, 55, 40],
+          fill: true,
+          borderColor: '#336CFB',
+          tension: 0.5
+        }, {
+          label: 'Actual',
+          data: [15, 44, 30, 21, 46, 65, 10],
+          fill: true,
+          borderColor: '#8DBAF4',
+          tension: 0.5
+        }]
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            suggestedMin: 50,
+            ticks: {
+              beginAtZero: true,
+              stepSize: 30,
+                },
+            suggestedMax: 70
+          }
+        }
+      }
+      });
+  </script>
+  <script>
+    var ctx2 = document.getElementById( 'lineChart2' ).getContext( '2d' );
+    var myChart2 = new Chart( ctx2, {
+        type: 'line',
+        data: {
+        labels: ['a', 'b','c','d','e'],
+        datasets: [{
+          label: 'Target',
+          data: [65, 59, 40, 51, 56],
+          fill: false,
+          borderColor: '#336CFB',
+          tension: 0.5
+        }]
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            suggestedMin: 50,
+            ticks: {
+              beginAtZero: true,
+              stepSize: 30,
+                },
+            suggestedMax: 70
+          }
+        }
+      }
+      });
+  </script>
+  <script>
+    var ctx2 = document.getElementById( 'lineChart3' ).getContext( '2d' );
+    var myChart2 = new Chart( ctx2, {
+        type: 'line',
+        data: {
+        labels: ['a', 'b','c','d','e'],
+        datasets: [{
+          label: 'Target',
+          data: [65, 59, 40, 51, 56],
+          fill: false,
+          borderColor: '#336CFB',
+          tension: 0.5
+        }]
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            suggestedMin: 50,
+            ticks: {
+              beginAtZero: true,
+              stepSize: 30,
+                },
+            suggestedMax: 70
+          }
+        }
+      }
+      });
+  </script>
+</body>
+</html>
